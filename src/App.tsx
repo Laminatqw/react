@@ -2,24 +2,19 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Shablon from "./components/Shablon/Shablon";
+import DivComp from "./components/DivComponent/divComp";
+import Header1 from "./components/HeaderOne/Header1";
+import ButtonComp from "./components/ButtonComponent/ButtonComp";
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+        <Header1 label={'caption'} text={'The Domestic Vehicle'}></Header1>
+        <DivComp items={ <Shablon text={'Zis-12'} picture={'https://upload.wikimedia.org/wikipedia/commons/0/08/Z-15-4_3_na_ZiS-5_RB3.jpg'}></Shablon>}></DivComp>
+        <ButtonComp name={'Show Info'}></ButtonComp>
+
+    </>
   );
 }
 
