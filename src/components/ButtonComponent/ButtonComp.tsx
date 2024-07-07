@@ -1,11 +1,15 @@
 import React, {FC} from 'react';
 interface IProps{
     name:string
+    clickDeed:any
+    id:number
 }
-const ButtonComp:FC <IProps> = ({name}) => {
+const ButtonComp:FC <IProps> = ({name, clickDeed, id}) => {
     return (
         <>
-        <button>{name}</button>
+        <button onClick={()=>{
+            clickDeed(id);
+        }}>{name}</button>
         </>
     );
 };

@@ -1,10 +1,12 @@
-import React, {FC} from 'react';
+import React, {FC, ReactNode} from 'react';
 interface IProps {
-    items:any;
+    children:ReactNode;
 }
-const DivComp : FC<IProps> = ({items}) => {
+const DivComp : FC<IProps> = ({children}) => {
     return (
-        <div>{items}</div>
+        <div>
+            {children}
+        </div>
     );
 };
 
