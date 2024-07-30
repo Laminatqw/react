@@ -1,5 +1,5 @@
 import React from 'react';
-import { IPost } from '../Model/IPost';
+import IPost  from '../../Model/IPost';
 
 interface UserPostComponentProps {
     posts: IPost[];

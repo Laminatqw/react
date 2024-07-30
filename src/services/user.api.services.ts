@@ -1,9 +1,9 @@
 import axios, { AxiosResponse } from "axios";
 import IUser from "../Model/IUser";
-import {IPost} from "../Model/IPost";
+import IPost from "../Model/IPost";
 
 const axiosInstance = axios.create({
-    baseURL: "https://dummyjson.com",
+    baseURL: "https://jsonplaceholder.typicode.com",
     headers: { "Content-Type": "application/json" },
 });
 

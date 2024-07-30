@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { joiResolver } from '@hookform/resolvers/joi';
 import Joi from 'joi';
 import axios from 'axios';
-import {formPostValid} from "../validator/formPostValid";
+import {formPostValid} from "../../validator/formPostValid";
 
 interface IFormType {
     title: string;

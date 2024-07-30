@@ -3,13 +3,26 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import HomeComp from "./components/homeComponent/homeComp";
+import UserPage from "./components/UserPageComp/UserPage";
+import PostPage from "./components/PostPageComp/PostPage";
+import CommentPage from "./components/CommentPageComp/CommentPage";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+let router = createBrowserRouter([
+    {path: '/', element:<HomeComp/>},
+    {path: 'users', element:<UserPage/>},
+    {path: 'posts', element:<PostPage/>},
+    {path: 'comments', element:<CommentPage/>}
+])
+
 root.render(
 
-    <App />
+    <RouterProvider router={router}/>
 
 );
 

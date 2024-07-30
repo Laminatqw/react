@@ -1,13 +1,13 @@
 import axios, { AxiosResponse } from "axios";
-import IPost from "../Model/IPost";
+import IComment from "../Model/IComment";
 
 const axiosInstance = axios.create({
     baseURL: "https://jsonplaceholder.typicode.com",
     headers: { "Content-Type": "application/json" },
 });
 
-const getPosts = (): Promise<AxiosResponse<IPost[]>> => {
-    return axiosInstance.get("/posts");
+const getComments = (): Promise<AxiosResponse<IComment[]>> => {
+    return axiosInstance.get("/comments");
 };
 
-export { getPosts };
+export { getComments };
