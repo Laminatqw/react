@@ -8,6 +8,8 @@ import HomeComp from "./components/homeComponent/homeComp";
 import UserPage from "./components/UserPageComp/UserPage";
 import PostPage from "./components/PostPageComp/PostPage";
 import CommentPage from "./components/CommentPageComp/CommentPage";
+import OneUserComp from "./components/OneUserComp/OneUserComp";
+import PostCommentsComp from "./components/PostCommentsComp/PostCommentsComp";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -17,7 +19,9 @@ let router = createBrowserRouter([
     {path: '/', element:<HomeComp/>},
     {path: 'users', element:<UserPage/>},
     {path: 'posts', element:<PostPage/>},
-    {path: 'comments', element:<CommentPage/>}
+    {path: 'comments', element:<CommentPage/>},
+    {path: 'users/:id', element: <OneUserComp/>},
+    {path: 'posts/:id', element: <PostCommentsComp/>}
 ])
 
 root.render(

@@ -7,15 +7,17 @@ const axiosInstance = axios.create({
     headers: { "Content-Type": "application/json" },
 });
 
-const getUsers = (): Promise<AxiosResponse<{ users: IUser[] }>> => {
+const getUsers = (): Promise<AxiosResponse<IUser[]>> => {
     return axiosInstance.get("/users");
 };
-
-const getUserPosts = (id: number): Promise<AxiosResponse<{ posts: IPost[] }>> => {
+const getUser = (id: any): Promise<AxiosResponse<IUser>> => {
+    return axiosInstance.get(`/users/${id}`);
+};
+const getUserPosts = (id: number): Promise<AxiosResponse<IPost[]>> => {
     return axiosInstance.get(`/users/${id}/posts`);
 };
 
-export { getUsers, getUserPosts };
+export { getUsers, getUserPosts, getUser };
 
 //     const baseUrl = "https://dummyjson.com/users";
 //
