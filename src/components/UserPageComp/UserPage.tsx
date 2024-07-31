@@ -32,7 +32,7 @@ const UserPage: React.FC = () => {
                 {users.length > 0 ? (
                     users.map(user => (
                         <li key={user.id} onClick={() => handleUserClick(user)}>
-                            {user.username}
+                            {user.username} <button>more info</button>
                         </li>
                     ))
                 ) : (

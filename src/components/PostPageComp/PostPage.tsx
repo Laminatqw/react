@@ -28,7 +28,7 @@ const navigate = useNavigate();
             <h1>Posts</h1>
             <ul>
                 {posts.map(post => (
-                    <li key={post.id} onClick={()=> handleUserClick(post)}>{post.title}</li>
+                    <li key={post.id} onClick={()=> handleUserClick(post)}>{post.title} <button>more info</button></li>
                 ))}
             </ul>
         </div>
