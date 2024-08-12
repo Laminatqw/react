@@ -1,21 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useEffect} from 'react';
 import './App.css';
+import {useSelector} from "react-redux";
+import {useAppDispatch, useAppSelector } from "./redux/store";
+import {userActions} from "./redux/slices/userSlice";
 
-import Shablon from "./components/Shablon/Shablon";
-import DivComp from "./components/DivComponent/divComp";
-import Header1 from "./components/HeaderOne/Header1";
-import ButtonComp from "./components/ButtonComponent/ButtonComp";
+const App = () => {
 
-function App() {
-  return (
-    <>
-        <Header1 label={'caption'} text={'The Domestic Vehicle'}></Header1>
-        <DivComp items={ <Shablon text={'Zis-12'} picture={'https://upload.wikimedia.org/wikipedia/commons/0/08/Z-15-4_3_na_ZiS-5_RB3.jpg'}></Shablon>}></DivComp>
-        <ButtonComp name={'Show Info'}></ButtonComp>
+    let {userSlice: {users,isLoaded}} = useAppSelector(state => state);
 
-    </>
-  );
+    let dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(userActions.loadUsers());
+    }, []);
+
+
+    return (
+        <div>
+            {!isLoaded && <div>Loading in process....</div>}
+
+            {users.map(user => <div>{user.name}</div>)}
+        </div>
+    );
 }
 
 export default App;
