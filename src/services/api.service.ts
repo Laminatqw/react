@@ -13,6 +13,10 @@ export const userService = {
     getAll: async () => {
         const response = await axiosInstance.get<IUser[]>(urls.users.base);
         return response.data;
+    },
+    getUser: async (id:number) =>{
+        const response = await axiosInstance.get<IUser>(urls.users.byId(id));
+        return response.data;
     }
 }
 

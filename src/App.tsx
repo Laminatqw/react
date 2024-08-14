@@ -1,27 +1,21 @@
-import React, {useEffect} from 'react';
-import './App.css';
-import {useSelector} from "react-redux";
-import {useAppDispatch, useAppSelector } from "./redux/store";
-import {userActions} from "./redux/slices/userSlice";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const App = () => {
+const App: React.FC = () => {
+    const navigate = useNavigate();
 
-    let {userSlice: {users,isLoaded}} = useAppSelector(state => state);
-
-    let dispatch = useAppDispatch();
-
-    useEffect(() => {
-        dispatch(userActions.loadUsers());
-    }, []);
-
+    const goToUsers = () => navigate('/users');
+    const goToPosts = () => navigate('/posts');
+    const goToComments = () => navigate('/comments');
 
     return (
         <div>
-            {!isLoaded && <div>Loading in process....</div>}
-
-            {users.map(user => <div>{user.name}</div>)}
+            <h1>Home Page</h1>
+            <button onClick={goToUsers}>Go to Users</button>
+            <button onClick={goToPosts}>Go to Posts</button>
+            <button onClick={goToComments}>Go to Comments</button>
         </div>
     );
-}
+};
 
 export default App;

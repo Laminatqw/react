@@ -1,0 +1,8 @@
+.userLine{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+.userLine button{
+    margin-left: 10px;
+}
