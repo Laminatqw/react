@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {useAppDispatch, useAppSelector} from "../../../redux/store";
 import {userActions} from "../../../redux/slices/userSlice";
-import {useNavigate, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 
 const OneUserPage = () => {
     const { id } = useParams<{ id: string }>();

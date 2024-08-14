@@ -7,6 +7,9 @@ import {store} from "./redux/store";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import AllUserPage from "./component/pages/allUserPage/allUserPage";
 import OneUserPage from "./component/pages/oneUserPage/oneUserPage";
+import AllPostPage from "./component/pages/allPostPage/allPostPage";
+import PostComments from "./component/pages/PostComments/postComments";
+import CommentPage from "./component/pages/commentPage/commentPage";
 
 
 const root = ReactDOM.createRoot(
@@ -19,8 +22,9 @@ root.render(
             <Route path="/" element={<App/>} />
             <Route path="/users" element={<AllUserPage/>} />
             <Route path="users/:id" element={<OneUserPage/>} />
-            {/*<Route path="/posts" element={<PostPage />} />*/}
-            {/*<Route path="/comments" element={<CommentsPage />} />*/}
+            <Route path="/posts" element={<AllPostPage/>} />
+            <Route path="posts/:id/comments" element={<PostComments/>} />
+            <Route path="/comments" element={<CommentPage />} />
         </Routes>
         </BrowserRouter>
     </Provider>
